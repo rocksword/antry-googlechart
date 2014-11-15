@@ -97,13 +97,13 @@
         data.addColumn('string', 'Department');
         data.addColumn('number', 'Revenues');
         data.addRows([ [ 'Shoes', 10700 ], [ 'Sports', -15400 ], [ 'Toys', 12500 ], [ 'Electronics', -2100 ],
-                [ 'Food', 22600 ], [ 'Art', 1100 ] ]);
-
+                [ 'Food', 22600 ], [ 'Art', 1100 ], [ 'JC3', 1.5 ], [ 'JC1', 2.5 ], [ 'JC0', 3.5 ] ]);
         var table = new google.visualization.Table(document.getElementById('colorformat_div'));
-
         var formatter = new google.visualization.ColorFormat();
-        formatter.addRange(-20000, 0, 'white', 'orange');
-        formatter.addRange(20000, null, 'red', '#33ff33');
+        formatter.addRange(0, 1.5 + 0.01, '#fff', '#d8cb29');
+        formatter.addRange(1.5 + 0.01, 2.5 + 0.01, '#fff', '#ed5427');
+        formatter.addRange(2.5 + 0.01, 3.5 + 0.01, '#fff', '#3c64d1');
+
         formatter.format(data, 1); // Apply formatter to second column
 
         table.draw(data, {
@@ -193,19 +193,19 @@
 </script>
 </head>
 <body>
-  <h1>Table</h1>
-  <div id="table_div"></div>
-  <h1>Bar format</h1>
-  <div id="barformat_div"></div>
-  <h1>Arrow format</h1>
-  <div id="arrowformat_div"></div>
-  <h1>Color format</h1>
-  <div id="colorformat_div"></div>
-  <h1>Date format</h1>
-  <div id="dateformat_div"></div>
-  <h1>Number format</h1>
-  <div id="numberformat_div"></div>
-  <h1>Pattern format</h1>
-  <div id="patternformat_div"></div>
+    <h1>Table</h1>
+    <div id="table_div"></div>
+    <h1>Bar format</h1>
+    <div id="barformat_div"></div>
+    <h1>Arrow format</h1>
+    <div id="arrowformat_div"></div>
+    <h1>Color format</h1>
+    <div id="colorformat_div"></div>
+    <h1>Date format</h1>
+    <div id="dateformat_div"></div>
+    <h1>Number format</h1>
+    <div id="numberformat_div"></div>
+    <h1>Pattern format</h1>
+    <div id="patternformat_div"></div>
 </body>
 </html>
